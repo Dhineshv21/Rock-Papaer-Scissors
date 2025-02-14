@@ -2,10 +2,6 @@ function getComputerChoice() {
   return Math.floor(Math.random() * 2);
 }
 
-function getHumanChoice() {
-  return parseInt(prompt("Press 0 for Rock, 1 for Paper and 2 for Scissors!"));
-}
-
 function answer(ans) {
   switch (ans) {
     case 0:
@@ -24,8 +20,6 @@ function answer(ans) {
 }
 
 function playGame() {
-  let humanChoice = answer(getHumanChoice());
-  console.log("You Chose " + humanChoice);
   let computerChoice = answer(getComputerChoice());
   console.log("Computer Chose " + computerChoice);
 
@@ -57,11 +51,24 @@ function playGame() {
 
 let humanScore = 0;
 let computerScore = 0;
+let humanChoice = "";
 
-playGame();
-playGame();
-playGame();
-playGame();
-playGame();
+document.getElementById("rock").addEventListener("click", function () {
+  humanChoice = "rock";
+  console.log("You Chose Rock");
+  playGame();
+});
+
+document.getElementById("paper").addEventListener("click", function () {
+  humanChoice = "paper";
+  console.log("You Chose Paper");
+  playGame();
+});
+
+document.getElementById("scissors").addEventListener("click", function () {
+  humanChoice = "scissors";
+  console.log("You Chose Scissors");
+  playGame();
+});
 
 console.log(humanScore);
