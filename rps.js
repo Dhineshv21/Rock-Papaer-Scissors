@@ -45,8 +45,12 @@ function answer(ans) {
 function winner() {
   if (humanScore == 5) {
     winnerText.textContent = "You got 5 points! You won the Game!";
+    alert("You Won the game! Time to win again");
+    location.reload();
   } else if (computerScore == 5) {
     winnerText = "Computer won 5 points! You lose..";
+    alert("You Lost! Please don't lose again");
+    location.reload();
   }
 }
 
